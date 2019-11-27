@@ -8,17 +8,15 @@ RUN apt-get install -y locales \
     && echo "en_US.UTF-8 UTF-8" > /etc/locale.gen \
     && locale-gen
 
-RUN mkdir -p /tmp/mssql/backup \
-    && mkdir -p /tmp/mssql/data \
-    && mkdir -p /tmp/mssql/log
+RUN mkdir -p /tmp/mssql
 
 COPY ./setup.sh /setup.sh
 
 RUN chmod +x /setup.sh
 
-ENV MSSQL_DATA_DIR=/tmp/mssql/data
-ENV MSSQL_LOG_DIR=/tmp/mssql/log
-ENV MSSQL_BACKUP_DIR=/tmp/mssql/backup
+ENV MSSQL_DATA_DIR=/tmp/mssql
+ENV MSSQL_LOG_DIR=/tmp/mssql
+ENV MSSQL_BACKUP_DIR=/tmp/mssql
 
 ENV ACCEPT_EULA=Y
 ENV SA_PASSWORD=DevP@!!w0rd
