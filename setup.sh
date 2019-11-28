@@ -9,7 +9,7 @@ then
     restoreSql='
         RESTORE DATABASE WideWorldImporters
         FROM DISK = "/tmp/wwi.bak"
-        WITH MOVE "WWI_Primary" TO "/tmp/mssql/WideWorldImporters.mdf",
+        WITH REPLACE, MOVE "WWI_Primary" TO "/tmp/mssql/WideWorldImporters.mdf",
         MOVE "WWI_UserData" TO "/tmp/mssql/WideWorldImporters_userdata.ndf",
         MOVE "WWI_Log" TO "/tmp/mssql/WideWorldImporters.ldf",
         MOVE "WWI_InMemory_Data_1" TO "/tmp/mssql/WideWorldImporters_InMemory_Data_1",
