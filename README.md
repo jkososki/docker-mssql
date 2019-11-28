@@ -14,6 +14,7 @@ docker build -t mssql .
 ## Configuration
 
 The following environment variables have been set to configure sql server:
+
 |Variable|Value|
 |---|---|
 |MSSQL_DATA_DIR|/tmp/mssql|
@@ -21,6 +22,7 @@ The following environment variables have been set to configure sql server:
 |MSSQL_BACKUP_DIR|/tmp/mssql|
 
 The following environment variables can be used within this build:
+
 |Variable|Description|
 |---|---|
 |wwi|If set a new copy of the Wide World Importers sample database will be downloaded and restored.|
