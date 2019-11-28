@@ -54,3 +54,5 @@ Place all database files and sql scripts in the container's `/tmp/mssql` path an
 #!/bin/bash
 docker run -d -p 1433:1433 -e scripts="attachdb.sql" -v $(pwd)/db:/tmp/mssql mssql
 ```
+
+*Note:* Scripts are executed after the wwi restore is complete.
