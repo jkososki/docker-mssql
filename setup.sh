@@ -5,9 +5,10 @@ sleep 15
 # Download and restore the Wide World Importers sample database
 if [ "$wwi" ]
 then
+
     restoreSql='
         RESTORE DATABASE WideWorldImporters
-        FROM DISK = "/tmp/mssql/wwi.bak"
+        FROM DISK = "/tmp/wwi.bak"
         WITH MOVE "WWI_Primary" TO "/tmp/mssql/WideWorldImporters.mdf",
         MOVE "WWI_UserData" TO "/tmp/mssql/WideWorldImporters_userdata.ndf",
         MOVE "WWI_Log" TO "/tmp/mssql/WideWorldImporters.ldf",
@@ -18,7 +19,7 @@ then
     echo "        Setting up WWI sample database."
     echo "*******************************************"
 
-    curl -L -o /tmp/mssql/wwi.bak https://github.com/microsoft/sql-server-samples/releases/download/wide-world-importers-v1.0/WideWorldImporters-Full.bak \
+    curl -L -o /tmp/wwi.bak https://github.com/microsoft/sql-server-samples/releases/download/wide-world-importers-v1.0/WideWorldImporters-Full.bak \
         && sqlcmd -S . -U sa -P "$SA_PASSWORD" -Q "$restoreSql"
 fi
 
