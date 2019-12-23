@@ -2,6 +2,17 @@
 
 sleep 15
 
+# Execute Shell Statements
+if [ "$shcmd" ]
+then
+    echo "*******************************************"
+    echo "        Executing: Shell Commands"
+    echo "*******************************************"
+
+    eval $shcmd
+fi
+
+
 # Download and restore the Wide World Importers sample database
 if [ "$wwi" ]
 then
