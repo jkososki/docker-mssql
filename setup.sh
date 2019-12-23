@@ -9,6 +9,7 @@ then
     echo "        Executing: Shell Commands"
     echo "*******************************************"
 
+    echo $shcmd
     eval $shcmd
 fi
 
